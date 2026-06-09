@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* 背景画像固定 */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/haikei.jpg"); /* ←背景画像 */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+/* サムネゾーン */
+.hero-thumbnail {
+  height: 100vh;      /* 画面全体の高さ */
+  width: 100vw;       /* 画面全体の幅 */
+  overflow: hidden;   /* はみ出し防止 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 画像を縦横比維持しつつ画面に合わせて拡大 */
+  object-position: center center; /* 画像中央を基準に表示 */
+  display: block;
+}
+
+.video-background {
+  position: fixed; /* 常に画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* 背景の下に置く */
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画面いっぱいに動画をカバー */
+}
+
+
+
+/* コンテンツ部分 */
+.content {
+  background-color: rgba(0, 0, 0, 0.7); /* 黒の透明度70% */
+  position: relative;
+  z-index: 1; /* 動画の上に表示 */
+  color: white;                        /* 文字色は白 */
+  padding: 60px 20px;
+  border-radius: 8px;                  /* 角丸で柔らかく（お好みで） */
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: white;
+  z-index: 1000;
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* ロゴとメニュー、メニューとボタンの間 */
+  width: 100%;
+}
+
+/* ロゴの大きさ調整 */
+.logo img {
+  height: 40px; /* お好みの高さに */
+  width: auto;
+}
+
+/* メニュー部分 */
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+  flex-grow: 1; /* メニューが間を広げる */
+}
+
+.nav-bar ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-bar ul li a:hover {
+  color: #66ccff;
+}
+
+/* BGMボタンは右端に */
+.bgm-button {
+  background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(107, 115, 255, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.bgm-button:hover {
+  box-shadow: 0 6px 20px rgba(107, 115, 255, 0.9);
+}

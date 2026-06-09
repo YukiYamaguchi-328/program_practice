@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>2つのクリックカウンター</title>
+</head>
+<body>
+  <h1>ローカル保存版クリックカウンター</h1>
+
+  <div>
+    <button onclick="increment('btn1')">ボタン1</button>
+    <span id="count1">0</span> 回
+  </div>
+
+  <div>
+    <button onclick="increment('btn2')">ボタン2</button>
+    <span id="count2">0</span> 回
+  </div>
+
+  <script>
+    // ページ読み込み時にlocalStorageから復元
+    let count1 = parseInt(localStorage.getItem('btn1') || '0');
+    let count2 = parseInt(localStorage.getItem('btn2') || '0');
+    document.getElementById('count1').innerText = count1;
+    document.getElementById('count2').innerText = count2;
+
+    function increment(buttonId) {
+      if (buttonId === 'btn1') {
+        count1++;
+        localStorage.setItem('btn1', count1);
+        document.getElementById('count1').innerText = count1;
+      } else if (buttonId === 'btn2') {
+        count2++;
+        localStorage.setItem('btn2', count2);
+        document.getElementById('count2').innerText = count2;
+      }
+    }
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>スクロールと背景固定デザイン</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <script src="script.js"></script>
+        <header class="site-header">
+        <nav class="nav-bar">
+            <div class="logo">
+            <img src="images/rogo.png" alt="サイトロゴ" />
+            </div>
+            <ul>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#goods">Goods</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="bgmToggle" class="bgm-button">BGM 再生</button>
+        </nav>
+        </header>
+
+
+        <audio id="bgmAudio" loop>
+            <source src="audio/0724.mp3" type="audio/mpeg" />
+            お使いのブラウザはaudioタグに対応していません。
+        </audio>
+
+
+         <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="videos/index.mp4" type="video/mp4" />
+                お使いのブラウザは動画タグに対応していません
+            </video>
+        </div>
+
+        <div class="hero-thumbnail">
+            <img src="images/bg.jpg" alt="サムネ画像">
+        </div>
+
+        <div class="content">
+            </script>
+            <h1>hololive DEV_ISからデビューした5人組アイドルユニット</h1>
+            <p>伝説の勇者たちがあなたを待っている。</p>
+            <p style="height: 2000px;"></p>
+        </div>
+    </body>
+</html>
